@@ -1,0 +1,28 @@
+/* 1. 모든 요소 선택 : * */
+* {
+  font-weight: bold;
+  color: darkorange;
+}
+
+/* 2. 태그 선택자 */
+p {
+  color: olivedrab;
+}
+
+/* 3. 클래스 선택자 */
+p.blue {
+  color: lightblue;
+}
+.blue.dark {
+  color: mediumblue;
+}
+.dark {
+  color: yellowgreen;
+}
+.blue {
+  color: aqua;
+}
+/* 4. 아이디 선택자 */
+#red {
+  color: tomato;
+}
