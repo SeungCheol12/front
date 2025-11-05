@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form5</title>
+  </head>
+  <body>
+    <!-- http://121.160.42.79:5500/form/form5.html -->
+    <h1>체크 관련 input 요소</h1>
+    <form action="" method="get">
+      <div>
+        <input type="checkbox" name="fruit" id="apple" checked value="사과" />
+        <label for="apple">사과</label>
+        <input type="checkbox" name="fruit" id="grape" value="포도" />
+        <label for="grape">포도</label>
+        <input type="checkbox" name="fruit" id="orange" value="오렌지" />
+        <label for="orange">오렌지</label>
+      </div>
+      <div>
+        <input type="radio" name="vege" id="apple1" checked value="사과1" />
+        <label for="apple1">사과</label>
+        <input type="radio" name="vege" id="grape1" value="포도1" />
+        <label for="grape1">포도</label>
+        <input type="radio" name="vege" id="orange1" value="오렌지1" />
+        <label for="orange1">오렌지</label>
+      </div>
+      <button type="submit">제출</button>
+    </form>
+    <h1>기타 input 요소</h1>
+    <!-- file=.bash_history&hidden=5&email=qwe1%40naver.com -->
+    <form action="" method="get">
+      <div>
+        <label for="file">file</label>
+        <input
+          type="file"
+          name="file"
+          id="file"
+          accept="image/png,image/jpeg"
+          multiple
+        />
+      </div>
+      <div>
+        <label for="hidden">hidden</label>
+        <input type="hidden" name="hidden" id="hidden" value="5" />
+      </div>
+      <div>
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <button type="submit">제출</button>
+    </form>
+  </body>
+</html>

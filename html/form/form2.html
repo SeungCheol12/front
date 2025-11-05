@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form2</title>
+  </head>
+  <body>
+    <!-- form 태그 : 사용자로부터 입력을 받기 위한 양식으 작성하는 태그
+            - action : 전송할 정보를 처리할 경로
+            - method : 정보를 서버로 전송할 때 사용하는 방식 지정(get, post) 
+            - autocomplete : 자동완성 기능
+            시작 : http://121.160.42.79:5500/basic/form1.html
+            
+            get 방식 (form 안에 입력한 값이 주소줄에 그대로 보임)
+            제출 : http://121.160.42.79:5500/basic/form1.html?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=10
+            %ED%99%8D%EA%B8%B8%EB%8F%99 : 인코딩 된 홍길동
+            https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=영화&ackey=vej4alrg
+
+            post 방식 : 입력한 값이 주소줄에 보이지 않음
+
+        1) type = "submit" : form 안 요소들을 action 에 적힌 곳으로 전송
+        2) type = "reset"  : form 안 요소들을 초기화 해준다
+        3) <label for="">  : 제목 텍스트
+            for 속성에 input 태그에 부여한 id 속성값과 동일한 값을 사용하는 경우, 제목 클릭시
+            input 속성에 포커스를 줄 수 있다
+        4) type = "text"   : 짧은 text 입력 시 사용
+        5) type = "number" : 숫자만 입력  
+
+           filedset : 그룹화하기
+           legend   : 그룹화 제목 지정
+           disabled : 비활성화
+
+        6) type = "password" : 비밀번호
+        7) type = "search"   : 검색 (X 버튼이 나옴)
+        8) type = "tel"      : 전화번호
+        9) type = "number", type = "range", type = "date"
+          - date, datetime - local, month, time
+        10) 체크관련 : checkbox, raido
+          - checkbox : 사용자로부터 여러 개 선택을 받는 경우 주로 사용
+          - radio    : 사용자로부터 하나의 선택을 받는 경우 주로 사용
+          - value 속성 무조건 작성
+        11) type = "file" : 파일첨부
+          - accept   : 첨부파일 제한
+          - multiple : 여러 개 파일 첨부
+        12) type = "email" : 이메일
+        13) type = "hidden" : 화면에 요소가 감춰짐
+
+        기타 입력 요소
+        1) textarea : 여러 줄 입력 요구
+          cols, rows, 정해진 rows 를 넘어가는 입력 발생 시 자동으로 스크롤 생김
+        2) select + option
+          - selected (기본 선택)
+          - multiple (여러 개 선택)
+        3) select + optiongroup + option
+          - optiongroup : 1차 분류
+        4) datalist
+           속성
+          1) 텍스트 요소
+           - pattern
+           - placeholder : 입력시 안내사항
+           - minlength, maxlength : 최소, 최대 입력 길이 지정
+          2) 숫자 요소
+           - min, max, step
+          3) 공통요소
+           - value : 값을 미리 생성할 때
+           - readonly : 읽기 전용 (수정 불가)
+           - required : 필수 입력 요구
+           - autofocus : 자동으로 특정 요소가 선택되도록 한다
+           - disabled : 특정 요소에 값 입력 불가, 서버 전송 불가
+
+
+    -->
+    <form action="" method="get" autocomplete="off">
+      <fieldset>
+        <legend>반장</legend>
+        <div>
+          <label for="name1">이름</label>
+          <input type="text" name="name1" id="name1" />
+        </div>
+        <!-- input:p 로 자동완성 된다-->
+        <div>
+          <label for="age1">나이</label>
+          <input type="number" name="age1" id="age1" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>부반장</legend>
+        <div>
+          <label for="name2">이름</label>
+          <input type="text" name="name2" id="name2" />
+        </div>
+        <!-- input:p 로 자동완성 된다-->
+        <div>
+          <label for="age2">나이</label>
+          <input type="number" name="age2" id="age2" />
+        </div>
+      </fieldset>
+      <fieldset disabled>
+        <legend>서기</legend>
+        <div>
+          <label for="name3">이름</label>
+          <input type="text" name="name3" id="name3" />
+        </div>
+        <!-- input:p 로 자동완성 된다-->
+        <div>
+          <label for="age3">나이</label>
+          <input type="number" name="age3" id="age3" />
+        </div>
+      </fieldset>
+      <button type="submit">제출</button>
+      <button type="reset">초기화</button>
+    </form>
+  </body>
+</html>

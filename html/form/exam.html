@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 주문서</title>
+    <style>
+      fieldset {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>상품 주문서</h1>
+    <form action="" method="get" autocomplete="off">
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="name">이름</label> <input type="text" name="name" id="name" placeholder="여백없이 입력" />
+          </li>
+          <li>
+            <label for="number">연락처</label>
+            <input type="number" name="number" id="number" placeholder="연락가능한 번호" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>배송지 정보</legend>
+        <ul>
+          <li><label for="name">주소</label> <input type="text" name="name" id="name" style="width: 300px" /></li>
+          <li><label for="number">전화번호</label> <input type="number" name="number" id="number" /></li>
+          <li><label for="message">메모</label><textarea name="message" id="message" cols="40" rows="3"></textarea></li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>주문 정보</legend>
+        <ul>
+          <li>
+            <input type="checkbox" name="fish" id="1" /><label for="1">과테말라 안티구아 (100g)</label
+            ><input type="number" name="1" id="1" value="0" style="width: 50px" /><label for="1">개</label>
+          </li>
+          <li>
+            <input type="checkbox" name="fish" id="2" /><label for="2">인도네시아 만델링 (100g)</label>
+            <input type="number" name="2" id="2" value="0" style="width: 50px" /><label for="2">개</label>
+          </li>
+          <li>
+            <input type="checkbox" name="fish" id="3" /><label for="3">탐라는도다(블렌딩) (100g)</label>
+            <input type="number" name="3" id="3" value="0" style="width: 50px" /><label for="3">개</label>
+          </li>
+        </ul>
+      </fieldset>
+      <button type="submit">주문하기</button>
+      <button type="reset">다시 작성</button>
+    </form>
+  </body>
+</html>

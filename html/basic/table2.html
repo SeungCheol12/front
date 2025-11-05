@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table2</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- table(표)
+        caption : 표 제목
+        tr : 행
+        td : 열 
+        th : 제목 열(글자 굵게, 가운데 정렬)
+          - scope : th 태그가 어떤 것의 제목인지 지정
+        thead, tbody, tfoot : 테이블 세 부분으로 나누어 지정할 때 사용
+    -->
+        <!-- table>caption+(tr>td*3)*3 -->
+    <table border="1">
+      <caption>
+        시간표
+      </caption>
+      <thead>
+        <tr>
+          <th scope="row">과목</th>
+          <th>월</th>
+          <th>화</th>
+          <th>수</th>
+        </tr>
+      </thead>
+        <tbody>
+        <tr>
+          <th>HTML</th>
+          <td>60분</td>
+          <td>60분</td>
+          <td>0분</td>
+        </tr>
+        <tr>
+          <th>CSS</th>
+          <td>60분</td>
+          <td>60분</td>
+          <td>0분</td>
+          <tr>
+             <th>JS</th>
+          <td>0분</td>
+          <td>0분</td>
+          <td>60분</td>
+          </tr>
+        </tr>
+        </tbody>
+        <tfoot>
+          
+        </tfoot>
+    </table>
+  </body>
+</html>
