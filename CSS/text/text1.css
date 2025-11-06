@@ -1,0 +1,12 @@
+.letter {
+  /* 자간 */
+  /* letter-spacing: -2px; */
+  font-size: 18px;
+  /* 줄높이 */
+  line-height: 1.2em;
+}
+
+.word {
+  /* 단어 간격 */
+  word-spacing: -2px;
+}

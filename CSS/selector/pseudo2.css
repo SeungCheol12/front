@@ -1,0 +1,23 @@
+/* 10. 가상 요소 선택자 */
+h1::before {
+  content: "test";
+  color: red;
+}
+
+h1::after {
+  content: "test2";
+  color: blue;
+}
+
+/* 11. 형태 구조 선택자 : 태그로 선택 */
+ol li:first-of-type {
+  color: red;
+}
+
+ol li:last-of-type {
+  color: blue;
+}
+
+ol li:nth-of-type(3) {
+  color: orange;
+}

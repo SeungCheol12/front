@@ -1,0 +1,20 @@
+ul {
+  /* disc(기본), circle, square */
+  list-style: square;
+}
+
+ul > li:first-child {
+  list-style: "㉾";
+}
+
+ol {
+  /* upper-alpha
+     upper-roman
+     decimal(기본값)
+    */
+  list-style: decimal;
+}
+
+ul {
+  list-style: none;
+}

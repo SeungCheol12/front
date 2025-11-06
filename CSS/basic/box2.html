@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box2</title>
+    <link rel="stylesheet" href="./box2.css" />
+  </head>
+  <body>
+    <!-- 
+        블록 요소 : 하나의 행 부여
+        - h1 ~ h6, p, div, table
+        - width : 100% 시작해서 크기 지정
+        - height : 내용만큼만 시작해서 크기 지정 가능
+        인라인 요소 : 내용만큼만 사용
+        - width, height : 지정 불가
+
+        마진
+        - 블록요소는 상하좌우
+        - 인라인요소는 좌우에만 여백
+
+        패딩
+        - 인라인, 블록요소가 섞이는 경우 패딩은 블록요소에 적용이 되나
+          상하 공간은 다른 요소를 밀어내지 않기 때문에 불완전하게 적용이 된다
+
+        마진 중복(병합)
+        1. 형제요소들의 margin-top 과 margin-bottom 이 만났을 때
+        2. 부모요소의 margin-top 과 자식요소의 margin-top 이 만났을 때 
+        3. 부모요소의 margin-bottom 과 자식요소의 margin-bottom 이 만났을 때 
+    -->
+    <span>인라인요소</span>
+    <div>div요소</div>
+    <span>인라인요소</span>
+    <span>인라인요소</span>
+    <div>div요소</div>
+    <div>div요소</div>
+    <span>인라인요소</span>
+    <span>인라인요소</span>
+    <span>인라인요소</span>
+    <div>div요소</div>
+    <div>div요소</div>
+    <div>div요소</div>
+  </body>
+</html>

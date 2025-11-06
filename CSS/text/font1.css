@@ -1,0 +1,48 @@
+p {
+  /* normal, italic, oblique*/
+  font-style: italic;
+  /* 100 ~ 900, bold, normal */
+  font-weight: 900;
+  font-size: 1.2em; /* 16 * 1.2 */
+  /* 글꼴
+    글꼴 계열 : serif(바탕체), sans-serif(고딕체), 
+    monospace(고정너비 글꼴), cursive(필기체)
+  */
+  font-family: "Courier New", Courier, monospace;
+}
+p.left {
+  text-align: left;
+  text-decoration: overline underline line-through;
+}
+
+p.right {
+  text-align: right;
+  text-decoration: wavy underline tomato;
+}
+
+p.center {
+  text-align: center;
+  text-decoration: dotted underline overline tomato 5px;
+}
+
+p.justify {
+  text-align: justify;
+}
+
+p.transform {
+  text-transform: uppercase;
+}
+
+p.shadow {
+  /* x좌표 y좌표 흐림정도 색상 */
+  text-shadow: 3px -3px 4px blue;
+}
+
+p.shadow {
+  /* x좌표 y좌표 흐림정도 색상 */
+  text-shadow: 0 1px red, 0 -1px red, 1px 0 red, -1px 0 red;
+}
+
+p.indent {
+  text-indent: -50px;
+}
