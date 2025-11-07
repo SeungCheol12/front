@@ -1,0 +1,54 @@
+flex 레이아웃
+1. 부모 요소에 적용하는 속성
+    - display : flex
+
+    - flex-wrap : 줄바꿈 지정
+        1) nowrap : 줄바꿈 안함(기본값)
+        2) wrap : 줄바꿈(오른쪽부터 아래줄로 이동)
+        3) wrap-reverse : 줄바꿈(왼쪽부터 아래줄로 이동)
+
+    - justify-content : 주 축의 정렬 방법
+        1) flex-start : 왼쪽 정렬 / 
+            좌 -> 우(flex-direction : row)로 배치 기본값
+            위 -> 아래(flex-direction : column)로 배치 기본값
+        2) flex-end : 오른쪽 정렬
+        3) center : 가운데 정렬
+        4) space-between : 시작과 마지막 요소를 양쪽 끝으로 밀고 남은 공백을 나눠갖기
+        5) space-around : 요소들 주위를 공백으로 채우기
+        6) space-evenly : 공백을 똑같이 나눠갖기
+
+    - align-content : align-items 와 동작 방식 동일
+        - flex-wrap : wrap; 두 줄일 때 사용
+        - align-items 랑 같이 쓰는 경우 align-content 우선함
+
+    - align-items : 주 축의 교차 축의 정렬 방식
+      flex-direction : row => 주 축(x축), 교차축(y축) 
+      flex-direction : column => 주 축(y축), 교차축(x축) 
+
+      
+      align-items : stretch (기본값) 자식 요소들이 부모 요소의 높이를 채움(자식 높이를 제한하지 않을 때)
+        1) flex-start : 각 줄의 시작점으로 정렬
+        2) flex-end : 각 줄의 끝점으로 정렬
+        3) flex-center : 가운데 정렬
+        4) baseline : 문자 기준선으로 정렬
+
+    - flex-direction : 자식(itmes)을 어느 축으로 정렬 할 것인가
+        1) row (기본값) : 자식(itmes)를 수평(좌 -> 우)축 기준으로 표시
+        2) rpw-reverse
+        3) column : items를 수직(위 -> 아래)축 기준으로 표시
+        4) column-reverse : column 이 반대 축으로 표시
+
+2. 자식 요소에 적용하는 속성
+     - order : items 순서 설정
+       order : 0(기본값) => 숫자가 클수록 맨 끝으로 가게됨
+
+     - flex-grow : items 증가 비율
+       flew-grow : 0(기본값)
+                   부모 요소에 여백이 있는 경우 아이템 너비를 늘릴 수 있다 
+     - flex-shrink : items 감소 비율
+
+     - flex-basis : items(공간 배분 전) 기본 너비 설정
+       flex-basis : auto (기본값) => 아이템들의 width 사용(or 컨텐츠 크기)
+
+     - flex(flex-grow, flex-shrink, flex-basis)
+     - align-self

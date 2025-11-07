@@ -1,0 +1,34 @@
+/* 
+    background
+    1) color
+    2) image
+        url() : 이미지 경로 지정
+        background-repeat; (기본값)
+        - repeat-x, repeat-y, no-repeat, space, round
+        background-position : top left(기본값)
+        background-size : auto(기본값)
+        - contain : 전체 배경 영역에서 이미지의 어느 한쪽 긴 부분을 자동으로 맞추기
+        background-repeat : no-repeat + background-position : center
+        - cover : 여백공간 없이 이미지로 전체 배경 채우기 
+        background-position : center
+        background-attachment : scroll (기본값)
+        - 배경 이미지가 요소를 따라서 스크롤 여부 결정
+        -fixed : 배경 이미지가 뷰포트에 고정되어 요소와 같이 스크롤 되지않음
+    
+*/
+div {
+  width: 464px;
+  height: 328px;
+  border: 1px solid orange;
+  background-image: url(../images/img/orange-tile.png);
+  /* background-image: url(../images/img/bg3.jpg); */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: cover; */
+}
+
+body {
+  background-image: url(../images/img/orange-tile.png);
+  background-repeat: no-repeat;
+  background-attachment: local;
+}
