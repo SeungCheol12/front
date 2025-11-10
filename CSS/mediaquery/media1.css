@@ -1,0 +1,34 @@
+/* 반응형 웹 - media query
+    min-width, max-width 를 조절
+    @media
+*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  height: 100px;
+  background-color: gold;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    height: 100px;
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    height: 100px;
+    background-color: darkgoldenrod;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    height: 100px;
+    background-color: red;
+  }
+}

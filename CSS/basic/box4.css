@@ -1,0 +1,25 @@
+/* width, height : auto(기본값), px, em, rem, vw, vh, %
+    vw : viewport width
+    vh : viewport height
+
+    max-width, min-width : width 속성을 재정의
+    max-width : 부모가 늘어날 때 자식의 최대 크기 제한
+    min-width : 부모가 줄어들더라도 자식에게 보장해야 하는 최소 넓이
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+.parent {
+  width: 100%;
+  height: 300px;
+  border: 1px solid red;
+}
+
+.child {
+  width: 100%;
+  max-width: 600px;
+  min-width: 200px;
+  height: 200px;
+  background-color: orange;
+}
