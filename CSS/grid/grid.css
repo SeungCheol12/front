@@ -1,0 +1,60 @@
+/* 
+    grid 레이아웃
+    1) 부모에 적용하는 grid
+        display : grid
+        grid-template-columns : 열 너비 지정
+        grid-template-rows : 행 크기 지정
+        grid-auto-rows : 전체적으로 지정 가능
+        - grid-auto-rows: auto : content 양에 따라 자동으로 조절
+        gap : 열 사이의 간격
+        justify-items
+        align-items
+    2) 자식에 적용하는 grid
+        grid-column : 1/ 4      grid 번호 1~4 까지 차지
+        grid-column : 1/ span 4 grid 번호 1부터 4개를 차지
+        justify-self
+        align-self
+*/
+
+.container {
+  padding: 0.8em;
+  background-color: lightgray;
+  display: grid;
+  /* grid-template-columns: 100px 200px; 300px */
+  /* grid-template-columns: 30% 70%; */
+  /* grid-template-columns: 3fr 7fr; */
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: 100px 1fr 2fr; */
+  /* grid-template-rows: 1fr 2fr 3fr; */
+  grid-auto-rows: 160px;
+  gap: 1em;
+  /* justify-items: end; */
+  /* align-items: end; */
+}
+
+.container > div {
+  padding: 1em;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: slateblue;
+}
+
+.container > div:first-child {
+  /* grid-column: 1 / -1; */
+  /* grid-column: 2/ -2; */
+  grid-row: 1 / 5;
+}
+
+.container > div:nth-child(2) {
+  grid-column: 3/-1;
+  grid-row: 1/ 2;
+}
+
+.container > div:nth-child(3) {
+  justify-self: end;
+  align-self: center;
+}
+
+.container > div > span {
+  display: none;
+}

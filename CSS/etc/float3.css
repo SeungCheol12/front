@@ -1,0 +1,11 @@
+.box {
+  background-color: gray;
+  overflow: hidden;
+}
+
+.box img:first-child {
+  float: left;
+}
+.box img:last-child {
+  float: right;
+}

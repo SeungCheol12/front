@@ -1,0 +1,35 @@
+html - 구조설계 / css - 디자인 / javascript - 동작
+
+javascript runtime : 자바스크립트 실행 환경
+1) 브라우저
+2) node.js
+
+javascript 프레임워크 : Vue.js
+javascript 라이브러리 : react, jqeury
+
+자바스크립트 작성
+1) 외부 파일 작성 : <script src="파일명"></script>
+2) <head>~</head> or </body> 앞 쪽에 <script></script> 작성
+3) 인라인방식(비추천)
+
+변수와 상수 선언
+-----------------------------
+var     let     const
+-----------------------------
+재선언O  재선언X  재선언X
+재할당O  재할당O  재할당X
+
+자료형
+1) boolean
+2) string : '', "" 구분 안함
+3) number : 정수, 실수 구분 안함
+4) object
+5) undefined(값을 담지 않은 상황), null(비어 있는 상태)
+6) {} : 객체
+
+연산자
+1) 산술 : / => 나머지까지 나누기 실행
+2) 비교 : 
+    == : 값만 비교
+    === : 값, 타입 비교
+     - ex) 3 == "3" => (true), 3 === "3" => (false)
