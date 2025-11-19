@@ -1,0 +1,16 @@
+window
+    |-- BOM(Browser Object Model) : 문서 이외의 모든 것을 제어하기 위해 브라우저가 제공하는 객체
+    |     - history, location, screen, navigator ...
+    |-- DOM(Document Object Model) : 웹 페이지 내의 모든 내용들을 객체로 표현
+
+
+DOM
+- 문서안에 작성하는 태그 => element => node
+- parent / child
+- html 태그 요소 찾기 : document.documentElement
+- head 태그 요소 찾기 : document.head
+- body 태그 요소 찾기 : document.body
+
+- 자식 요소 찾기
+  1) childNodes : 엔터 포함된 요소
+  2) childern : 태그 요소만
