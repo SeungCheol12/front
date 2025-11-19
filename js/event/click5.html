@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      span {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark">Dark 🔄️</span>
+      </div>
+    </nav>
+    <script>
+      const nav = document.querySelector(".navbar");
+
+      nav.addEventListener("click", (e) => {
+        const span = e.target;
+
+        // 어느 span에서 이벤트가 발생했는가?
+        // span.classList.contains("") 를 쓴다
+        if (span.classList.includes("badge")) {
+          if (span.textContent.includes("Dark")) {
+            // Dark 🔄️ 클릭 시 bg-light => bg-warning 으로 변경
+            e.currentTarget.classList.replace("bg-light", "bg-dark");
+            //    bg-dark => bg-light
+            span.classList.replace("bg-dark", "bg-light");
+            //   글자색 노란색
+            // span.style.color = "yellow";
+            // Light 🔄️ 로 변경
+            span.textContent = "Light 🔄️";
+
+            // class 명 이용시
+            span.classList.add("text-warning");
+            span.previousElementSibling.classList.add("text-warning");
+          } else {
+            e.currentTarget.classList.replace("bg-dark", "bg-light");
+            span.classList.replace("bg-light", "bg-dark");
+            span.textContent = "Dark 🔄️";
+            span.classList.remove("text-warning");
+            span.previousElementSibling.classList.remove("text-warning");
+          }
+        }
+      });
+
+      // Light 🔄️ 클릭 시 원래대로 변경
+    </script>
+  </body>
+</html>

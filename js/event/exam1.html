@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>The Light Blub</h2>
+    <div>
+      <button type="button">Turn on the light</button>
+      <img src="../img/pic_bulboff.gif" alt="" />
+      <button type="button">Turn off the light</button>
+    </div>
+    <script>
+      // Turn on the light 버튼이 클릭되면 img src 수정 ../img/pic_bulbon.gif
+      //   const div = document.querySelector("div");
+      //   const img = document.querySelector("img");
+
+      //   div.addEventListener("click", (e) => {
+      //     const btn = e.target;
+      //     if (btn.textContent.includes("on")) {
+      //       img.src = "../img/pic_bulbon.gif";
+      //     } else {
+      //       img.src = "../img/pic_bulboff.gif";
+      //     }
+      //   });
+      const btns = document.querySelectorAll("button");
+      const source = (src) => {
+        // img.src = "";
+        document.querySelector("img").src = src;
+      };
+      btns[0].addEventListener("click", () => source("../img/pic_bulbon.gif"));
+      btns[1].addEventListener("click", () => source("../img/pic_bulboff.gif"));
+    </script>
+  </body>
+</html>
