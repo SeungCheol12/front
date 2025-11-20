@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 150px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quia repellendus debitis, doloremque pariatur
+      expedita doloribus ab autem voluptate nostrum eum, eos reprehenderit cum nesciunt dignissimos totam ipsa id
+      officia odit nam, quo saepe inventore. Architecto, atque facilis! Et nemo ipsam laborum quaerat quia, rerum minus
+      modi, laboriosam optio consectetur vero mollitia quam fugiat similique reiciendis blanditiis ab, maiores omnis!
+      Expedita placeat, hic assumenda quibusdam quaerat nesciunt quae itaque officiis perspiciatis eius ratione quos in
+      nisi facilis ut voluptatem est facere a optio exercitationem adipisci? Possimus, tempore, recusandae magni minima
+      commodi laboriosam consectetur ipsam placeat tempora distinctio, saepe illum adipisci.
+    </div>
+    <script>
+      const div = document.querySelector("div");
+
+      console.log("div.scrollHeight ", div.scrollHeight); // 스크롤 높이 + divHeight
+      console.log("div.clientHeight ", div.clientHeight); // 현재 요소 높이
+      div.addEventListener("scroll", () => {
+        console.log("scrollTop", div.scrollTop); // 현재 스크롤 위치
+        if (div.scrollHeight == div.clientHeight + div.scrollTop) {
+          alert("회원 약관을 다 읽었습니다");
+        }
+        // 약간의 오차 허용
+        // const tolerance = 1;
+        // const maxScroll = div.scrollHeight - div.clientHeight;
+
+        // if (div.scrollTop > maxScroll - tolerance) {
+        //   alert("회원 약관을 다 읽었습니다");
+        // }
+      });
+    </script>
+  </body>
+</html>
