@@ -20,7 +20,7 @@ function InputMultiSample2() {
     <>
       <input
         type="text"
-        name=""
+        name="name"
         id=""
         onChange={handleChange}
         value={name}
@@ -29,7 +29,7 @@ function InputMultiSample2() {
       />
       <input
         type="text"
-        name=""
+        name="nickname"
         id=""
         onChange={handleChange}
         value={nickname}
