@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Square from "./Square";
 import type { BoardProps, Squares } from "./types/type";
-import calcWinner from "./utils/Utils";
+import calcWinner from "./utils/utils";
 
 function Board({ xIsNext, squares, onPlay }: BoardProps) {
   // const initialSquares: Squares = Array(9).fill(null);
