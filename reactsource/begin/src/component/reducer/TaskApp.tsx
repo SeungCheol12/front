@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import AddTask from './AddTask';
 import ListTask from './ListTask';
+import { taskReducer } from './TaskReducer';
 export type TaskProps = {
   id: number;
   text: string;
@@ -14,30 +15,23 @@ const initialTask = [
 ];
 let nextId = 3;
 function TaskApp() {
-  const [tasks, setTasks] = useState(initialTask);
+  const [tasks, dispatch] = useReducer(taskReducer, initialTask);
   // 여행 계획 추가
   const handleAddTask = (text: string) => {
     // tasks 추가
-    setTasks([
-      ...tasks,
-      {
-        id: nextId++,
-        text: text,
-        done: false,
-      },
-    ]);
+    dispatch({ type: 'ADD', id: nextId++, text, done: false });
   };
   // 여행 계획 수정
   const handleChangeTask = (task: TaskProps) => {
     // 수정할 task 찾기
-    setTasks(tasks.map((t) => (t.id === task.id ? { ...t, ...task } : t)));
+    dispatch({ type: 'CHANGE', task });
   };
   // 여행 계획 삭제
   const handleDeleteTask = (taskId: number) => {
     // tasks 에서 id 에 해당하는 task 제거
     // tasks 에서 id 와 일치하지 않는 task 추출해서 새로운 배열 생성 : map(), filter()
     // 기존 배열이 필요가 없다
-    setTasks(tasks.filter((task) => task.id !== taskId));
+    dispatch({ type: 'DELETE', id: taskId });
   };
 
   // useState 확인용

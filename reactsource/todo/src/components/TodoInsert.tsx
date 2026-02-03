@@ -1,0 +1,73 @@
+import { useState } from 'react';
+import { MdAdd } from 'react-icons/md';
+import type { TodoUpsert } from '../types/todo';
+
+const TodoInsert = ({
+  onAddTodo,
+}: {
+  onAddTodo: (todo: TodoUpsert) => void;
+}) => {
+  const [form, setForm] = useState({
+    title: '',
+    important: false,
+    completed: false,
+  });
+  // 구조분해
+  const { title, important } = form;
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    // setForm({
+    //   ...form,
+    //   [name]: type === 'checkbox' ? checked : value,
+    // })
+    setForm((prev) => ({
+      ...prev, // 이전 상태 복사
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // 부모함수 호출
+    onAddTodo({
+      title: title,
+      completed: false,
+      important: important,
+    });
+    // 사용자 입력값 제거
+    setForm({
+      ...form,
+      title: '',
+      important: false,
+      completed: false,
+    });
+  };
+  return (
+    <form className="flex bg-black" onSubmit={handleSubmit}>
+      <input
+        name="important"
+        type="checkbox"
+        className="mx-2 grow-0 p-2 text-gray-400 placeholder:text-gray-400 focus:outline-none"
+        onChange={handleFormChange}
+        checked={important}
+      />
+      <input
+        name="title"
+        type="text"
+        placeholder="할 일을 입력하세요"
+        className="grow p-2 text-gray-400 placeholder:text-gray-400 focus:outline-none"
+        onChange={handleFormChange}
+        value={title}
+      />
+      <button
+        type="submit"
+        className="cursor-pointer bg-gray-300 p-2 hover:bg-gray-500"
+      >
+        <MdAdd />
+      </button>
+    </form>
+  );
+};
+
+export default TodoInsert;
