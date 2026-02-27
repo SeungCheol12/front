@@ -54,7 +54,7 @@ const Home = () => {
     setSearchParams(next);
   };
   // 로딩과 에러
-  if (loading) return <Loading />;
+  // if (loading) return <Loading />;
   if (error) return <Error />;
   return (
     <BasicLayout>
@@ -65,12 +65,14 @@ const Home = () => {
             onChange={handleChange}
             type="text"
             name="keyword"
+            value={keyword}
             placeholder="Search by title or author"
             className="w-50 rounded-sm border-2 border-gray-300 p-2 text-[.9em] leading-tight outline-0"
           />
           <select
             onChange={handleChange}
             name="genre"
+            value={genre}
             className="ml-2 rounded-sm border-2 border-gray-300 p-2 text-[.9em] leading-tight outline-0"
           >
             <option value="">All Genres</option>

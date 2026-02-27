@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import type { Novel, NovelPut, PageRequestDTO } from '../types/book';
+import jwtAxios from '../utils/jwtUtil';
 
 export const API_SERVER_HOST = 'http://localhost:8080/api/novels';
 
@@ -24,7 +25,7 @@ export const getRow = async (id: string) => {
 
 // available 업데이트
 export const putAvailable = async (novelObj: NovelPut) => {
-  const res = await axios.put(
+  const res = await jwtAxios.put(
     `${API_SERVER_HOST}/available/${novelObj.id}`,
     novelObj,
   );
@@ -32,7 +33,7 @@ export const putAvailable = async (novelObj: NovelPut) => {
 };
 // available + genre 업데이트
 export const putNovel = async (novelObj: NovelPut) => {
-  const res = await axios.put(
+  const res = await jwtAxios.put(
     `${API_SERVER_HOST}/edit/${novelObj.id}`,
     novelObj,
   );
@@ -40,11 +41,17 @@ export const putNovel = async (novelObj: NovelPut) => {
 };
 // 삭제
 export const deleteOne = async (id: number) => {
-  const res = await axios.delete(`${API_SERVER_HOST}/${id}`);
+  const res = await jwtAxios.delete(`${API_SERVER_HOST}/${id}`);
   return res.data;
 };
 // 삽입
 export const postNovel = async (novelObj: Novel) => {
-  const res = await axios.post(`${API_SERVER_HOST}/add`, novelObj);
+  const res = await jwtAxios.post(`${API_SERVER_HOST}/add`, novelObj);
+  return res.data;
+};
+// ai 소개글
+export const getDesc = async (id: number) => {
+  const res = await jwtAxios.get(`${API_SERVER_HOST}/${id}/ai-desc`);
+  console.log('서버 도착', res);
   return res.data;
 };

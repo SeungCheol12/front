@@ -1,10 +1,40 @@
 import { useNavigate } from 'react-router-dom';
-import { deleteOne } from '../../apis/novelApis';
+import { deleteOne, getDesc } from '../../apis/novelApis';
 import type { Novel } from '../../types/book';
 import { getBookEmoji, renderStars } from '../../utils/novelUtil';
+import { useState } from 'react';
+import useLogin from '../../hooks/useLogin';
 
 const NovelDetail = ({ novel }: { novel: Novel }) => {
   const navigate = useNavigate();
+
+  // LLM -------------------- 모델 추가
+  const [aiDescription, setAiDescription] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [error, setError] = useState<unknown>(null);
+  // 로그인정보
+  const { authState } = useLogin();
+  let roleName = '';
+  if (authState.roles.includes('ADMIN')) roleName = 'ADMIN';
+  const handleGenerate = async (id: number) => {
+    try {
+      setIsGenerating(true);
+      // ai 소개글 도착
+      const data = await getDesc(id);
+      console.log('ai 소개글 ', data);
+      setAiDescription(data.aiDesc);
+    } catch (error) {
+      console.error(error);
+      setError(error);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const description = novel.description?.trim()
+    ? novel.description
+    : aiDescription;
+  // LLM -------------------- 모델 추가
 
   const deleteRow = async (id: number) => {
     try {
@@ -47,7 +77,36 @@ const NovelDetail = ({ novel }: { novel: Novel }) => {
         </div>
         <div className="text-[8.6em]">{getBookEmoji(novel.id)}</div>
       </section>
+      <section className="mt-6 border-t border-neutral-200 p-5">
+        <p className="my-1.25">
+          <strong>Summary</strong>
+          <textarea
+            name="summary"
+            rows={5}
+            className="w-full resize-none rounded-lg border border-gray-300 p-3 text-sm"
+            defaultValue={novel.summary}
+          />
+        </p>
+        {!isGenerating && description && (
+          <p className="my-1.25">
+            <strong>AI 소개글</strong>
+            <textarea
+              rows={6}
+              className="w-full resize-none rounded-lg border border-gray-300 p-3 text-sm"
+              defaultValue={description}
+            />
+          </p>
+        )}
+      </section>
       <section className="text-center">
+        {!description && roleName === 'ADMIN' && (
+          <button
+            onClick={() => handleGenerate(novel.id)}
+            className="mx-1 my-6 rounded-[5px] bg-orange-600 px-4 py-3 text-[1.2em] text-white hover:bg-sky-900"
+          >
+            AI 소개글 생성
+          </button>
+        )}
         <button
           onClick={() => navigate(`../edit/${novel.id}`)}
           className="mx-1 my-6 rounded-[5px] bg-sky-600 px-4 py-3 text-[1.2em] text-white hover:bg-sky-900"

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import MyTodo from './redux/component/MyTodo.tsx';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/modules/index.ts';
+import Copywriter from './openai/Copywriter.tsx';
 // import Navbar from './router/data/Navbar.tsx';
 
 // store : 애플리케이션 당 하나의 스토어
@@ -13,8 +14,9 @@ const store = configureStore({
 });
 createRoot(document.getElementById('root')!).render(
   <>
-    <Provider store={store}>
+    {/* <Provider store={store}>
       <MyTodo />
-    </Provider>
+    </Provider> */}
+    <Copywriter />
   </>,
 );

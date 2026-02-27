@@ -7,10 +7,11 @@ import type { LoginForm } from '../types/user';
 export const API_SERVER_HOST = 'http://localhost:8080/api/member';
 
 // 로그인 post
-export const getList = async (loginParam: LoginForm) => {
+export const postLogin = async (loginParam: LoginForm) => {
   const form = new FormData();
+  // login 시 id 는 무조건 username, password는 password
   form.append('username', loginParam.email);
-  form.append('pw', loginParam.pw);
+  form.append('password', loginParam.pw);
 
   const res = await axios.post(`${API_SERVER_HOST}/login`, form, {
     headers: { 'Content-Type': 'x-www-form-urlencoded' },
